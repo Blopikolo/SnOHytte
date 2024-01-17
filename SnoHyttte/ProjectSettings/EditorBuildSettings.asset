@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hytte.unity
     guid: ec93261ba4157bb46baa6281e864911c
+  - enabled: 1
+    path: "Assets/Scenes/vedbj\xF8rn.unity"
+    guid: 993161d311339764084bbea2f5fc4f68
   m_configObjects: {}
