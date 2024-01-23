@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bunn
+    uniqueID: 3372967685
+    locked: 0
+  - name: middel
+    uniqueID: 3274858021
+    locked: 0
+  - name: top
+    uniqueID: 304879425
+    locked: 0
