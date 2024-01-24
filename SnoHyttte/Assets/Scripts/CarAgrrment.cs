@@ -11,6 +11,7 @@ public class CarSex : MonoBehaviour
     public string LevelName;
     [SerializeField] Text pickUpText;
     [SerializeField] Text pickUpText2;
+    [SerializeField] Text pickUpText3;
 
    
     public float yes;
@@ -19,6 +20,7 @@ public class CarSex : MonoBehaviour
     
         pickUpText2.gameObject.SetActive(false);
         pickUpText.gameObject.SetActive(false);
+        pickUpText3.gameObject.SetActive(false);
         boksskjekk = false;
     }
 
@@ -37,12 +39,19 @@ public class CarSex : MonoBehaviour
         {
             //da skjer det ting
             pickUpText2.gameObject.SetActive(false);
-          
-           
-            SceneManager.LoadScene(LevelName); ;
+            yes = yes + 1;
+            pickUpText3.gameObject.SetActive(true);
+
         }
 
+        if (boksskjekk == true && Input.GetKeyDown(KeyCode.E) && yes > 1)
+        {
+            //da skjer det ting
+            pickUpText3.gameObject.SetActive(false);
 
+
+            SceneManager.LoadScene(LevelName); 
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -57,6 +66,9 @@ public class CarSex : MonoBehaviour
     {
         boksskjekk = false;
         pickUpText.gameObject.SetActive(false);
+        pickUpText2.gameObject.SetActive(false);
+        pickUpText3.gameObject.SetActive(false);
+        yes = 0;
     }
 
 

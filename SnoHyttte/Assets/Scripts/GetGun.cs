@@ -12,6 +12,9 @@ public class GetGun : MonoBehaviour
     [SerializeField] Text pickUpText;
     public GameObject Bwall;
     public float keys;
+    public GameObject Bwall2;
+    public GameObject Bwall3;
+    public GameObject Bwall4;
 
     void Start()
     {
@@ -29,6 +32,9 @@ public class GetGun : MonoBehaviour
             Bwall.gameObject.SetActive (false);
             boksskjekk = false;
             pickUpText.gameObject.SetActive(false);
+            Bwall2.gameObject.SetActive(false);
+            Bwall3.gameObject.SetActive(false);
+            Bwall4.gameObject.SetActive(false);
         }
     }
 
