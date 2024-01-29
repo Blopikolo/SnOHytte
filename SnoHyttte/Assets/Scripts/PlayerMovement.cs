@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingScripty : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     //public Animator animator;
-    public float runspeed;
-    public float jumpSpeed;
+    public float baseSpeed;
+    public float moveSpeed;
 
     float vertical;
     float horizontal;
@@ -17,12 +17,14 @@ public class WalkingScripty : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        baseSpeed = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         PlayerRun();
         FlipCheck();
         Jump();
@@ -31,13 +33,13 @@ public class WalkingScripty : MonoBehaviour
     void PlayerRun()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(horizontal * runspeed, 0);
+        rb.velocity = new Vector2(horizontal * moveSpeed, 0);
         //animator.SetFloat("Speed", Mathf.Abs(horizontal));
     }
     void Jump()
     {
         vertical = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector3(horizontal * runspeed, vertical * jumpSpeed, 0);
+        rb.velocity = new Vector3(horizontal * moveSpeed, vertical * moveSpeed, 0);
     }
     void FlipCheck()
     {
@@ -57,5 +59,14 @@ public class WalkingScripty : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+    public void UpdateSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    public void ResetSpeed()
+    {
+        moveSpeed = baseSpeed;
     }
 }

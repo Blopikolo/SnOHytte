@@ -22,6 +22,7 @@ public class LoadScene : MonoBehaviour
     {
         if (boksskjekk == true && Input.GetKeyDown(KeyCode.E))
         {
+            AudioManager.Play("gunshoot");
             //da skjer det ting
             SceneManager.LoadScene(LevelName); ;
         }

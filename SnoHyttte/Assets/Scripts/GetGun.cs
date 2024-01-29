@@ -35,6 +35,7 @@ public class GetGun : MonoBehaviour
             Bwall2.gameObject.SetActive(false);
             Bwall3.gameObject.SetActive(false);
             Bwall4.gameObject.SetActive(false);
+            AudioManager.Play("gunget");
         }
     }
 

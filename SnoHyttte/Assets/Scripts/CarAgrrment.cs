@@ -48,7 +48,7 @@ public class CarSex : MonoBehaviour
         {
             //da skjer det ting
             pickUpText3.gameObject.SetActive(false);
-
+            AudioManager.Play("cardrive");
 
             SceneManager.LoadScene(LevelName); 
         }
