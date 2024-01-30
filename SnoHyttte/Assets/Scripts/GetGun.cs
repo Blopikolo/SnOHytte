@@ -15,9 +15,11 @@ public class GetGun : MonoBehaviour
     public GameObject Bwall2;
     public GameObject Bwall3;
     public GameObject Bwall4;
+    public GameObject gun;
 
     void Start()
     {
+        gun.gameObject.SetActive(false);
         pickUpText.gameObject.SetActive(false);
         boksskjekk = false;
     }
@@ -32,9 +34,10 @@ public class GetGun : MonoBehaviour
             Bwall.gameObject.SetActive (false);
             boksskjekk = false;
             pickUpText.gameObject.SetActive(false);
-            Bwall2.gameObject.SetActive(false);
-            Bwall3.gameObject.SetActive(false);
-            Bwall4.gameObject.SetActive(false);
+            Bwall2.SetActive(false);
+            Bwall3.SetActive(false);
+            Bwall4.SetActive(false);
+            gun.gameObject.SetActive(true);
             AudioManager.Play("gunget");
         }
     }

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         PlayerRun();
-        FlipCheck();
+        
         Jump();
     }
 
@@ -41,25 +41,7 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector3(horizontal * moveSpeed, vertical * moveSpeed, 0);
     }
-    void FlipCheck()
-    {
-        if (horizontal < 0 && !facingRight)
-        {
-            Flip();
-        }
-        else if (horizontal > 0 && facingRight)
-        {
-            Flip();
-        }
-    }
 
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
     public void UpdateSpeed(float newSpeed)
     {
         moveSpeed = newSpeed;
