@@ -158,7 +158,7 @@ MonoBehaviour:
   dialougePanel: {fileID: 1589250752}
   dialougeText: {fileID: 1903336185}
   dialouge:
-  - jeg er livol tuseen
+  - Hei 2 sequel
   contButton: {fileID: 689591907}
   wordSpeed: 0.06
   playerIsClose: 0
@@ -556,7 +556,8 @@ MonoBehaviour:
   dialougePanel: {fileID: 1589250752}
   dialougeText: {fileID: 1903336185}
   dialouge:
-  - Du er bare noob
+  - Hei
+  - nooob
   contButton: {fileID: 689591907}
   wordSpeed: 0.06
   playerIsClose: 0
