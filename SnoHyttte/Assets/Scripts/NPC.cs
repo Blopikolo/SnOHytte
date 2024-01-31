@@ -12,10 +12,11 @@ public class NPC : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public float andreas;
     
-    void Update()
+    void Start()
     {
-
+        andreas = 0;
         
         
 
@@ -76,7 +77,7 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && andreas ==0)
         {
            
             playerIsClose = true;
@@ -89,20 +90,14 @@ public class NPC : MonoBehaviour
                 dialougePanel.SetActive(true);
                 StartCoroutine(Typing());
             }
+            andreas = andreas + 1;
         }
 
     }
 
 
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsClose = false;
-            zeroText();
-        }
-    }
+
 
 }
 
